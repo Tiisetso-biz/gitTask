@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+/*center the body*/
+body {
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+/*paragraph attributes*/
+h3 {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: large;
+  text-align: center;
+}
+
+button#save {
+  background-color: lime;
+  border-radius: 10px;
+  border: solid green 1px;
+}
+
+button#saveComment {
+  background-color: lime;
+  border-radius: 10px;
+  border: solid green 1px;
+}
+
+/*section and footer start at 30px padding-left*/
+section,
+footer {
+  text-align: center;
+  padding-left: 30px;
+}
+
+/*make undordered list gray*/
+ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: gray;
+}
+
+/*float the list items to the left*/
+li {
+  float: left;
+}
+
+table a {
+  text-decoration: none;
+}
+
+/*change navbar items color*/
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 10px; /*spaces in between the items*/
+  text-decoration: none;
+}
+
+/*change the link color to powderblue on hover */
+li a:hover {
+  background-color: powderblue;
+  text-decoration: none;
+}
+
+.zoomIn {
+  padding: 20px;
+  transition: transform 1s; /* Animation */
+  margin: 0 auto;
+}
+
+.zoomIn:hover {
+  transform: scale(1.25); /* (125% zoom when user hovers over) */
+}
+
+/* Style the form - display items horizontally */
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+/* Add some margins for each label */
+.form-inline label {
+  margin: 3px 7px 3px 0;
+}
+
+/* Style the input fields */
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+/*make table have borders*/
+table,
+th,
+td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  border-color: rgb(191, 214, 216);
+  background-color: rgb(191, 214, 216);
+}
+
+.col-md-6 {
+  border: 1px solid gray;
+  padding-inline: 10px;
+}
+
+.col-md-6 p a {
+  text-decoration: none;
+}
+
+button a {
+  text-decoration: none;
+}
+
+.box {
+  padding: 40px 30px;
+  background: gray;
+  color: white;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.contactMe {
+  text-align: center;
+}
+
+/*stick footer to the bottom*/
+footer {
+  /* position: fixed;
+    bottom: 0;  */
+  background-color: rgb(74, 71, 62);
+}
+
+/* Some new CSS*/
+#save-later-form {
+  position: relative;
+  width: 40vw;
+  margin: 3rem auto;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+}
+
+#save-later-comment {
+  position: relative;
+  width: 40vw;
+  height: 400px;
+  margin: 3rem auto;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+}
+
+label {
+  margin: 1rem 0 0;
+  display: block;
+}
+
+input {
+  font-size: 0.875em;
+  width: 100%;
+  height: 40px;
+  padding: 0px 15px 0px 15px;
+  background: lightgray;
+  outline: none;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+}
+
+input:hover {
+  background: whitesmoke;
+  color: black;
+}
+
+button[type="submit"] {
+  background-color: #349bab;
+  width: calc((100% / 2) - 3px);
+  display: inline-block;
+  color: white;
+  font-weight: 600;
+  height: 2.8rem;
+  border: none;
+  font-family: Nunito;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px;
+  border: solid green 1px;  
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  height: 110px;
+  max-height: 110px;
+  padding: 15px;
+  margin: 0 0 1rem 0;
+  background: lightgray;
+  outline: none;
+  color: black;
+  font-size: 0.875em;
+  border: none;
+}
+
+#save {
+  background-color: lime;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: "Nunito", sans-serif;
+}
