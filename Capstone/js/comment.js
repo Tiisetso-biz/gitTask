@@ -19,17 +19,17 @@ let nextId = 1;
  * [formIdentifier] as the object key
  * @returns {Object}
  */
-const getCommentData = () => {
-  let data = { [commentFormIdentifier]: {} };
+const getCommentDataFromLocalStorage = () => {
+  let localStorageData = { [commentFormIdentifier]: {} };
   for (const element of commentFormElements) {
     //if length of an element name is greater than 0
     if (element.name.length > 0) {
       //get the value of that element inside the form
-      data[commentFormIdentifier][element.name] = element.value;
+      localStorageData[commentFormIdentifier][element.name] = element.value;
     }
   }
   //return the data contained
-  return data;
+  return localStorageData;
 };
 
 //save comment as draft
@@ -38,10 +38,10 @@ commentSaveButton.onclick = event => {
   event.preventDefault();
 
   //get comment data
-  data = getCommentData();
+  localStorageData = getCommentDataFromLocalStorage();
 
   //store the value in localStorage
-  localStorage.setItem(commentFormIdentifier, JSON.stringify(data[commentFormIdentifier]));
+  localStorage.setItem(commentFormIdentifier, JSON.stringify(localStorageData[commentFormIdentifier]));
 
   //alert the user
   alert("Draft comment saved.")
@@ -86,7 +86,7 @@ submitCom.onclick = event => {
  * if commentFormIdentifier has some data in localStorage,
  * get that information and populate it on the form
  */
-const populateForm = () => {
+const populateFormWithDataFromLocalStorage = () => {
     if (localStorage.key(commentFormIdentifier)) {
       const savedData = JSON.parse(localStorage.getItem(commentFormIdentifier)); // get and parse the saved data from localStorage
       for (const element of commentFormElements) {
@@ -98,6 +98,6 @@ const populateForm = () => {
     }
   };
   
-  document.onload = populateForm(); // populate the form when the document is loaded
+  document.onload = populateFormWithDataFromLocalStorage(); // populate the form when the document is loaded
   
   /*============================================ END OF COMMENT FORM ====================================================== */

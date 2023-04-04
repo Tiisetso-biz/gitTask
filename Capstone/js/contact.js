@@ -15,7 +15,7 @@ let formElements = form.elements; // get the elements in the form
  * [formIdentifier] as the object key
  * @returns {Object}
  */
-const getFormData = () => {
+const getFormDataFromLocalStorage = () => {
   let data = { [formIdentifier]: {} };
   for (const element of formElements) {
     //if length of an element name is greater than 0
@@ -40,7 +40,7 @@ saveButton.onclick = event => {
   }
     alert("Draft has been saved for later. You now have " + numItems + " items saved for later.") **/
     event.preventDefault();
-  data = getFormData();
+  data = getFormDataFromLocalStorage();
   localStorage.setItem(formIdentifier, JSON.stringify(data[formIdentifier]));
   alert("Draft has been saved for later. You now have + numItems +  items saved for later.")
 };
@@ -51,7 +51,7 @@ saveButton.onclick = event => {
  * get that information and populate it on the form
  *
  */
-const populateForm = () => {
+const populateFormWithDataFromLocalStorage = () => {
   if (localStorage.key(formIdentifier)) {
     const savedData = JSON.parse(localStorage.getItem(formIdentifier)); // get and parse the saved data from localStorage
     for (const element of formElements) {
@@ -63,7 +63,7 @@ const populateForm = () => {
   }
 };
 
-document.onload = populateForm(); // populate the form when the document is loaded
+document.onload = populateFormWithDataFromLocalStorage(); // populate the form when the document is loaded
 
 /*============================================ END OF CONTACT FORM ====================================================== */
 
