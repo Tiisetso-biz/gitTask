@@ -3,7 +3,7 @@
 //comments
 const displayComments = () => {
     
-    let list = document.getElementById("cmts");     //get <ul> list tag 
+    let list = document.getElementById("comments");     //get <ul> list tag 
     let listItem = document.createElement("li");    //create a <li> list tag
 
     let allComments = [];                           // to store all comments
