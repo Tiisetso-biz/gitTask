@@ -6,9 +6,6 @@ const saveButton = document.querySelector("#save"); // select save button
 let form = document.querySelector(`#${formId}`); // select form
 let formElements = form.elements; // get the elements in the form
 
-//let itms = [];
-//localStorage.setItem("items", JSON.stringify(itms));
-
 /**
  * This function gets the values in the form
  * and returns them as an object with the
@@ -28,21 +25,19 @@ const getFormDataFromLocalStorage = () => {
   return data;
 };
 
+//save information for later
 saveButton.onclick = event => {
-  /**event.preventDefault();
-  data = getFormData();
-  itms.push(data[formIdentifier]);
-  localStorage.setItem("items", JSON.stringify(itms));
-  let numItems = 0;
-  for(let i = 0; i < itms.length; i++){
-     JSON.parse(localStorage.getItem(itms[i]));
-     numItems++;
-  }
-    alert("Draft has been saved for later. You now have " + numItems + " items saved for later.") **/
-    event.preventDefault();
+  //cancels default action by the event if any
+  event.preventDefault();
+
+  //store actual information from the local storage into a variable 'data'
   data = getFormDataFromLocalStorage();
+
+  //store information into local storage 
   localStorage.setItem(formIdentifier, JSON.stringify(data[formIdentifier]));
-  alert("Draft has been saved for later. You now have + numItems +  items saved for later.")
+
+  //alert user of the saved draft
+  alert("Draft has been saved for later.")
 };
 
 /**
@@ -59,6 +54,7 @@ const populateFormWithDataFromLocalStorage = () => {
         element.value = savedData[element.name];
       }
     }
+    //alert user
     alert("Form has been refilled with data...")
   }
 };
