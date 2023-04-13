@@ -14,7 +14,7 @@ h3 {
   text-align: center;
 }
 
-button#save {
+button#save, button#save1 {
   background-color: lime;
   border-radius: 10px;
   border: solid green 1px;
