@@ -5,6 +5,7 @@ const formIdentifier = `${url} ${formId}`; // Identifier used to identify the fo
 const saveButton = document.querySelector("#save"); // select save button
 let form = document.querySelector(`#${formId}`); // select form
 let formElements = form.elements; // get the elements in the form
+const contactMsgs = [];
 
 /**
  * This function gets the values in the form
@@ -35,9 +36,9 @@ saveButton.onclick = event => {
 
   //store information into local storage 
   localStorage.setItem(formIdentifier, JSON.stringify(data[formIdentifier]));
-
+  contactMsgs.push(data[formIdentifier]);
   //alert user of the saved draft
-  alert("Draft has been saved for later.")
+  alert("Draft has been saved for later."+ "\n" + "You have " +  contactMsgs.length +  " items saved.");
 };
 
 /**

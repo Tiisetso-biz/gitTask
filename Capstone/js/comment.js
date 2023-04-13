@@ -11,7 +11,6 @@ const commentContent = document.querySelector("#comment"); //get text content
 const submitCom = document.querySelector("#submit"); //get submit button
 
 const comments = []; //array of comments
-let nextId = 1;
 
 /**
  * This function gets the values in the form
@@ -39,7 +38,7 @@ commentSaveButton.onclick = (event) => {
 
   //get comment data
   localStorageData = getCommentDataFromLocalStorage();
-
+  comments.push(commentContent)
   //store the value in localStorage
   localStorage.setItem(
     commentFormIdentifier,
@@ -47,7 +46,7 @@ commentSaveButton.onclick = (event) => {
   );
 
   //alert the user
-  alert("Draft comment saved.");
+  alert("Draft comment saved." + "\n" + "You have " +  comments.length +  " items saved.");
 };
 
 //submit comment and display it on the page below

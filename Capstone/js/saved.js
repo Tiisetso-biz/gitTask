@@ -16,6 +16,11 @@ const displayComments = () => {
   }
 };
 
+//get base64 string from localStorage and apply to the image with the blank src created
+let dataImage = localStorage.getItem('imgData');
+bannerImg = document.getElementById('tableBanner');
+bannerImg.src = "data:image/png;base64," + dataImage;
+
 displayComments(); //invoke the display comments function
 
 function allert() {
